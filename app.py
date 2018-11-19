@@ -7,7 +7,7 @@ app = Flask(__name__)
 def healthcheck():
     return jsonify(status='healthy!')
 
-@app.route('/infoantenas')
+@app.route('/antennas')
 def get_anthens_info():
     return requests.get('https://geoportal.minetur.gob.es/VCTEL/infoantenasGeoJSON.do?idCapa=null&bbox=-3.3525553686015%2C41.838103675076%2C-3.3428779584757%2C41.844144009778&zoom=4').content
 
