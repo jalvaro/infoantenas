@@ -4,9 +4,9 @@ from flask import Flask, jsonify
 def create_app():
     app = Flask(__name__)
 
-    @app.route('/ping')
-    def ping():
-        return jsonify(ping='pong')
+    @app.route('/')
+    def healthcheck():
+        return jsonify(status='healthy!')
 
     return app
 
