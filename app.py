@@ -34,7 +34,6 @@ def is_point_malformed(point):
 
 @app.route('/antennas')
 def get_anthens_info():
-    print("test")
     rectangle = get_rectangle(request)
 
     if rectangle is None or is_point_malformed(rectangle['point1']) or is_point_malformed(rectangle['point2']):
@@ -51,6 +50,7 @@ def get_anthens_info():
         'zoom': 4
     }
     r = requests.get('https://geoportal.minetur.gob.es/VCTEL/infoantenasGeoJSON.do', params=payload)
+    print(r.json())
     return jsonify(r.json())
 
 def get_app():
